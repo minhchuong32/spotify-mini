@@ -1,67 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Spotify</title>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-            crossorigin="anonymous"
-        />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <title>Music Player</title>
-        <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-
-    </head>
-    <body>
-        <div class="player">
-            <!-- Dashboard -->
-            <div class="dashboard">
-                <!-- Header -->
-                <header>
-                    <h4>Now Playing</h4>
-                    <h2>String 54th & 9th</h2>
-                </header>
-
-                <!-- CD -->
-                <div class="cd">
-                    <div class="cd-thumb" style="background-image: url(./assets/images/tinhCoYeuEm.jpg)"></div>
-                </div>
-
-                <!-- Control -->
-                <div class="control">
-                    <div class="btn btn-repeat" aria-label="Repeat">
-                        <i class="fas fa-redo"></i>
-                    </div>
-                    <div class="btn btn-prev" aria-label="Previous">
-                        <i class="fas fa-step-backward"></i>
-                    </div>
-                    <div class="btn btn-toggle-play" aria-label="Play/Pause">
-                        <i class="fas fa-pause icon-pause"></i>
-                        <i class="fas fa-play icon-play"></i>
-                    </div>
-                    <div class="btn btn-next" aria-label="Next">
-                        <i class="fas fa-step-forward"></i>
-                    </div>
-                    <div class="btn btn-random" aria-label="Shuffle">
-                        <i class="fas fa-random"></i>
-                    </div>
-                </div>
-
-                <input class="progress" type="range" id="progress" value="0" step="1" min="0" max="100" />
-
-                <audio
-                    id="audio"
-                    src="./assets/music/3 1 0 7 - 2 (Lofi Version) - DuongG, Nâu, W-n - tải mp3-lời bài hát.mp3"
-                ></audio>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Music Player</title>
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+  </head>
+  <body>
+    <div class="player">
+      <!-- Dashboard -->
+      <div class="dashboard">
+        <!-- Account bar -->
+        <section class="account-panel" aria-label="Tài khoản">
+          <div class="account-heading">
+            <span class="account-avatar">
+              <img
+                class="account-avatar-image"
+                src="./assets/images/admin.jpg"
+                alt="Ảnh đại diện tài khoản"
+              />
+            </span>
+            <div>
+              <span class="account-label">Tài khoản</span>
+              <strong class="account-status">Chưa đăng nhập</strong>
             </div>
+          </div>
+          <button class="account-login-button" type="button">
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Đăng nhập</span>
+          </button>
+        </section>
+        <form class="account-form" hidden>
+          <label for="account-password">Nhập mật mã để nghe nhạc nè !!!</label>
+          <div class="account-form-row">
+            <input
+              id="account-password"
+              type="password"
+              placeholder="Mật mã"
+              required
+            />
+            <button class="account-confirm-button" type="submit">
+              Vào app
+            </button>
+          </div>
+          <p class="account-message" role="status" aria-live="polite"></p>
+        </form>
+        <!-- Header -->
+        <header>
+          <h4>Now Playing</h4>
+          <h2>String 54th & 9th</h2>
+        </header>
 
-            <!-- Playlist -->
-            <div class="playlist">
-                <!-- <div class="song">
+        <!-- CD -->
+        <div class="cd">
+          <div
+            class="cd-thumb"
+            style="background-image: url(./assets/images/tinhCoYeuEm.jpg)"
+          ></div>
+        </div>
+
+        <!-- Control -->
+        <div class="control">
+          <div class="btn btn-repeat" aria-label="Repeat">
+            <i class="fas fa-redo"></i>
+          </div>
+          <div class="btn btn-prev" aria-label="Previous">
+            <i class="fas fa-step-backward"></i>
+          </div>
+          <div class="btn btn-toggle-play" aria-label="Play/Pause">
+            <i class="fas fa-pause icon-pause"></i>
+            <i class="fas fa-play icon-play"></i>
+          </div>
+          <div class="btn btn-next" aria-label="Next">
+            <i class="fas fa-step-forward"></i>
+          </div>
+          <div class="btn btn-random" aria-label="Shuffle">
+            <i class="fas fa-random"></i>
+          </div>
+        </div>
+
+        <input
+          class="progress"
+          type="range"
+          id="progress"
+          value="0"
+          step="1"
+          min="0"
+          max="100"
+        />
+
+        <audio
+          id="audio"
+          src="./assets/music/3 1 0 7 - 2 (Lofi Version) - DuongG, Nâu, W-n - tải mp3-lời bài hát.mp3"
+        ></audio>
+      </div>
+
+      <!-- Playlist -->
+      <div class="playlist">
+        <!-- <div class="song">
                     <div
                         class="thumb"
                         style="background-image: url('https://i.ytimg.com/vi/9bZkp7q19f0/maxresdefault.jpg')"
@@ -74,9 +122,9 @@
                         <i class="fas fa-ellipsis-h"></i>
                     </div>
                 </div> -->
-            </div>
-            <!-- Script  -->
-             <script src="./main.js"></script>
-        </div>
-    </body>
+      </div>
+      <!-- Script  -->
+      <script src="./main.js"></script>
+    </div>
+  </body>
 </html>

@@ -1,197 +1,319 @@
 :root {
-    --primary-color: #0b7547;
-    --text-color: #8faf93;
+  --primary-color: #0b7547;
+  --text-color: #8faf93;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
 body {
   background: linear-gradient(to right, #222, #000);
-
 }
 
 html {
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 .player {
-    position: relative; 
-    max-width: 480px;
-    margin: 0 auto;
-    overflow: hidden;
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .player .icon-pause {
-    display: none;
+  display: none;
 }
 
 .player.playing .icon-pause {
-    display: inline-block;
+  display: inline-block;
 }
 
 .player.playing .icon-play {
-    display: none;
+  display: none;
 }
 
 .dashboard {
-    padding: 16px 16px 14px;
-    /* background-color: #fff; */
-    border: 2px solid #222;
-    background: #232222;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    max-width: 480px;
-    border-bottom: 1px solid #100101;
+  padding: 12px 16px 14px;
+  /* background-color: #fff; */
+  border: 2px solid #222;
+  background: #232222;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 480px;
+  border-bottom: 1px solid #100101;
+}
 
+/* ACCOUNT */
+.account-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border: 1px solid #3b3b3b;
+  border-radius: 8px;
+  background: #191818;
+}
+
+.account-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.account-avatar {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.account-avatar-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.account-label,
+.account-status {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-label {
+  color: #888;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.account-status {
+  max-width: 190px;
+  color: var(--text-color);
+  font-size: 13px;
+}
+
+.account-login-button,
+.account-confirm-button,
+.account-add-button {
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--primary-color);
+  cursor: pointer;
+  font: inherit;
+}
+
+.account-login-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.account-form {
+  padding: 0 4px 10px;
+}
+
+.account-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #aaa;
+  font-size: 11px;
+}
+
+.account-form-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 7px;
+}
+
+.account-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 8px 9px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  outline: none;
+  color: #ddd;
+  background: #111;
+  font: inherit;
+  font-size: 12px;
+}
+
+.account-form input:focus {
+  border-color: var(--primary-color);
+}
+
+.account-confirm-button {
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.account-message {
+  min-height: 15px;
+  margin: 0;
+  color: #a9c5ac;
+  font-size: 11px;
 }
 
 /* HEADER */
 header {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 header h4 {
-    color: var(--primary-color);
-    font-size: 12px;
+  color: var(--primary-color);
+  font-size: 12px;
 }
 
 header h2 {
-    color: var(--text-color);
-    font-size: 20px;
+  color: var(--text-color);
+  font-size: 20px;
 }
 
 /* CD */
 .cd {
-    display: flex;
-    margin: auto;
-    width: 200px;
+  display: flex;
+  margin: auto;
+  width: 200px;
 }
 
 .cd-thumb {
-    width: 100%;
-    padding-top: 100%;
-    border-radius: 50%;
-    background-color: #333;
-    background-size: cover;
-    margin: auto;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
 }
 
 /* CONTROL */
 .control {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 18px 0 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 18px 0 8px 0;
 }
 
 .control .btn {
-    color: #666;
-    padding: 18px;
-    font-size: 18px;
+  color: #666;
+  padding: 18px;
+  font-size: 18px;
 }
 
 .control .btn.active {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .control .btn-toggle-play {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    font-size: 24px;
-    color: #e8e8e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
 }
 
 .progress {
-    width: 100%;
-    -webkit-appearance: none;
-    height: 6px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
+  width: 100%;
+  -webkit-appearance: none;
+  height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .progress::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 6px;
-    background-color: var(--primary-color);
-    cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: var(--primary-color);
+  cursor: pointer;
 }
 
 /* PLAYLIST */
 .playlist {
-    margin-top: 408px;
-    padding: 12px;
-    border: 2px solid #222;
-    background: #222;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+  margin-top: var(--dashboard-height, 520px);
+  padding: 12px;
+  border: 2px solid #222;
+  background: #222;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
 }
 
 .song {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    background-color: #1f1c1c;
-    padding: 8px 16px;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #1f1c1c;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
 .song.active {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .song:active {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .song.active .option,
 .song.active .author,
 .song.active .title {
-    color: #fff;
+  color: #fff;
 }
 
 .song .thumb {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-size: cover;
-    margin: 0 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
 }
 
 .song .body {
-    flex: 1;
-    padding: 0 16px;
+  flex: 1;
+  padding: 0 16px;
 }
 
 .song .title {
-    font-size: 18px;
-    color: var(--text-color);
+  font-size: 18px;
+  color: var(--text-color);
 }
 
 .song .author {
-    font-size: 12px;
-    color: #999;
+  font-size: 12px;
+  color: #999;
 }
 
 .song .option {
-    padding: 16px 8px;
-    color: #999;
-    font-size: 18px;
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
 }
