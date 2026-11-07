@@ -52,6 +52,12 @@ const app = {
   songs: [],
   allSongs: [
     {
+      name: "RAINING IN ＯＳＡＫＡ (Lofi HipHop)",
+      singer: "Sleep & Rain mix",
+      path: "./assets/music/raining_lofi.mp3",
+      image: "./assets/images/raining_lofi.jpg",
+    },
+    {
       name: "Sprited Away",
       singer: "Itsumo Nandodemo",
       path: "./assets/music/Always with me _ Relaxing Music _ 30 Mins (online-audio-converter.com).mp3",
@@ -183,6 +189,8 @@ const app = {
       path: "./assets/music/faded.mp3",
       image: "./assets/images/faded.jpg",
     },
+
+    
 
     // baongoc
     {
